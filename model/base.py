@@ -8,8 +8,8 @@ class BaseModel(nn.Module):
     def __init__(self, is_loaded=False, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-    def load(self):
-        self.load_state_dict(torch.load(config.save_name, map_location=config.device))
+    def load(self, *model):
+        self.load_state_dict(torch.load(config.project_name + "_" + model[0].name + ".pt", map_location=config.device))
 
     def train_step(self, batch):
         inputs, labels = batch

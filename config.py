@@ -8,6 +8,7 @@ from model.model import *
 project_name = "Resnet"
 version = "v1.0"
 path_name = "out/" + project_name + version + "/"
+image_path_name = path_name+"images/"
 
 # model
 
@@ -34,5 +35,6 @@ BATCH_SIZE = 4
 
 if not os.path.exists(path_name):
     os.makedirs(path_name)
+    os.makedirs(image_path_name)
     shutil.copy("config.py", path_name + "model.config")  # 将该模型对应的配置信息保存
 

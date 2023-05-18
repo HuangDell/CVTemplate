@@ -47,5 +47,5 @@ def test():
 def train():
     model = ResNet9()
     loss, acc = _train(model, test_data=load.test_data, train_data=load.train_data)
-    save_model(model)
-    draw_result(config.epochs, loss, acc)
+    save_model(ResNet=model)
+    draw_result(config.epochs, loss=loss, acc=acc)
